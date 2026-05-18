@@ -54,6 +54,7 @@ double get_cpu_usage(CPUStats prev, CPUStats curr) {
     return 100.0 * (total_diff - idle_diff) / total_diff;
 }
 
+// Чтение данных о загрузке CPU
 std::map<int, double> cpu_usage() {
     std::map<int, CPUStats> prev = cpu_stats();
     std::this_thread::sleep_for(std::chrono::milliseconds(500));
@@ -66,7 +67,7 @@ std::map<int, double> cpu_usage() {
 }
 
 std::string get_all_cpu_usage() {
-    auto usage = cpu_usage();  // ОДИН вызов
+    auto usage = cpu_usage(); 
     if (cpuName == ""){
         cpuName = cpu_name();
     }
@@ -159,17 +160,14 @@ std::string get_all_cpu_usage() {
     // === СБОРКА: график сверху, таблица снизу ===
     std::string html = "<div style='display:flex; flex-direction:column; gap:20px;'>";
 
-    // Верх: график
     html += "<div style='max-width:100%;'>";
     html += "<div style='font-size:13px; font-weight:bold; color:#555; margin-bottom:6px;'>""</div>";
     html += svg;
     html += "</div>";
 
-    // Низ: таблица
     html += "<div>";
     html += table;
     html += "</div>";
-
     html += "</div>";
 
     return html;

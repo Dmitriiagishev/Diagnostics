@@ -1,0 +1,3 @@
+/home/dmitrii/workspace/Work/Yadro/Diagnostics/build/CMakeFiles/server.dir
+/home/dmitrii/workspace/Work/Yadro/Diagnostics/build/CMakeFiles/edit_cache.dir
+/home/dmitrii/workspace/Work/Yadro/Diagnostics/build/CMakeFiles/rebuild_cache.dir

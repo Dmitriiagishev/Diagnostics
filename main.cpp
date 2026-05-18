@@ -12,9 +12,6 @@
 #include "ram.h"
 #include "proc.h"
 
-int update_count = 0;
-
-// Функция для получения динамических данных
 std::string get_dynamic_content(int i) {
     return std::to_string(cpu_usage()[i]);
 }
@@ -49,21 +46,15 @@ int main()
 
     // API для динамического обновления
     CROW_ROUTE(app, "/api/cpu")([](){
-        auto response_cpu = crow::response(get_all_cpu_usage());
-        response_cpu.set_header("Content-Type", "application/json");
-        return response_cpu;
+        return get_all_cpu_usage();
     });
 
     CROW_ROUTE(app, "/api/ram")([](){
-        auto response_ram = crow::response(get_ram_usage_html());
-        response_ram.set_header("Content-Type", "application/json");
-        return response_ram;
+        return get_ram_usage_html();
     });
 
     CROW_ROUTE(app, "/api/proc_pid")([](){
-        auto response_proc = crow::response(get_proc_usage_pid_html());
-        response_proc.set_header("Content-Type", "application/json");
-        return response_proc;
+        return get_proc_usage_pid_html();
     });
 
     CROW_ROUTE(app, "/api/proc_cpu")([](){

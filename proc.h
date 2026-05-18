@@ -8,6 +8,7 @@
 #include <unordered_map>
 #include <map>
 #include <deque>
+#include <cstdio>
 
 struct PROCStats {
     std::string user, pid, cpu, mem, command;

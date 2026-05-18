@@ -1,9 +1,5 @@
 #include "proc.h"
 
-#include <cstdio>
-#include <string>
-#include <vector>
-
 int get_cpu_count() {
     std::ifstream file("/proc/stat");
     std::string line;

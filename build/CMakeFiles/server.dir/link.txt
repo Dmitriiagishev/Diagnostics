@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/server.dir/link.d CMakeFiles/server.dir/main.cpp.o CMakeFiles/server.dir/cpu.cpp.o CMakeFiles/server.dir/ram.cpp.o CMakeFiles/server.dir/proc.cpp.o -o server  -lpthread
